@@ -191,6 +191,16 @@ namespace VectorBLFTools.Tests
         }
 
 
+        [TestMethod()]
+        public void readTest() {
+            string filePath = "D:\\tzhs\\test.blf";
+
+            List<MessageBase>  mes = BinlogReadWrite.readBLF(filePath);
+            foreach (var msg in mes) { 
+                Debug.WriteLine(msg.ToString());
+            }
+        }
+
 
     }
 
