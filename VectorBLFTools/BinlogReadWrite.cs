@@ -63,7 +63,7 @@ namespace VectorBLFTools
                         if (retval == 1)
                         {
                             VBLCANFDMessage64 retMsg = Marshal.PtrToStructure<VBLCANFDMessage64>(pMsg);
-                            readMessageList.Add(new CANMessage(retMsg.mChannel, retMsg.mID, retMsg.mData, msg.mHeader.mObjectTimeStamp / 1000000000.0));
+                            readMessageList.Add(new CANFDMessage(retMsg.mChannel, retMsg.mID, 1 , retMsg.mData, msg.mHeader.mObjectTimeStamp / 1000000000.0));
                         }
                         Marshal.FreeHGlobal(pMsg);
                     }
